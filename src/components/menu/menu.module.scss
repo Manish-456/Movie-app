@@ -1,0 +1,65 @@
+.root {
+  flex-grow: 1;
+  flex-shrink: 1;
+  background-color: #211f1f;
+  padding: 50px;
+  height: calc(100vh);
+  overflow-y: scroll;
+  position: sticky;
+  top: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style-type: none;
+  color: white;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar{
+  width : 5px
+ }
+ ::-webkit-scrollbar-track{
+  background-color: #f1f1f1;
+ }
+ ::-webkit-scrollbar-thumb{
+  background-color: rgb(179, 179, 179);
+ }
+.logo {
+  height: 50px;
+  display: flex;
+  align-self: start;
+  direction: ltr;
+  align-items: center;
+  padding: 0px;
+}
+.logoimg {
+  width: 50px;
+  height: 50px;
+}
+.logotext {
+  font-size: 24px;
+  color: #d32525;
+}
+.title {
+  color: gray;
+  padding: 5px;
+}
+.hr {
+  height: 0.5px;
+  color: gray;
+  border: 1px solid #787878;
+  width: 100%;
+}
+.listitem {
+}
+.lists {
+  color: white;
+  padding: 1px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  cursor: pointer;
+}
+.listitem {
+  padding: 0px;
+}
