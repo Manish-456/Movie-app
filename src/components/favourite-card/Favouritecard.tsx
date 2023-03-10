@@ -9,7 +9,7 @@ export interface FavouriteCardProps {
         id: number;
         poster_path?: string;
         title: string;
-        overview: string;
+        overview? : string;
         vote_average: number;
         release_date: string;
     };
@@ -23,7 +23,7 @@ export const FavouriteCard = ({ className, movie }: FavouriteCardProps) => {
     const {dispatch} = useContext(FavoritesContext)
     return (
         <div className={classNames(styles.root, className)}>
-            <img src={`http://image.tmdb.org/t/p/w500/${movie.poster_path}`} className={styles.favimg} />
+            <img src={movie.poster_path && `http://image.tmdb.org/t/p/w500/${movie.poster_path}`} className={styles.favimg} />
             <div className={styles.favmoviedetail}>
                 <h1 className={styles.title}>{movie.title}</h1>
                 <span className={styles.rating}>{movie.vote_average.toFixed(1)}</span>

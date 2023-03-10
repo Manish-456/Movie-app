@@ -9,7 +9,7 @@ export interface CardProps {
         id: number;
         poster_path?: string;
         title: string;
-        overview: string;
+        overview?: string;
         vote_average: number;
         release_date: string;
     };
@@ -24,13 +24,13 @@ export const Card = ({ className, movie }: CardProps) => {
     return (
         <div className={classNames(styles.root, className)}>
             <img
-                src={`http://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                src={movie.poster_path && `http://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                 className={styles.cardImg}
             />
             <div className={styles.detail}>
                 <h1 className={styles.movieTitle}>{movie.title}</h1>
                 <span className={styles.rating}>{movie.vote_average.toFixed(1)}</span>
-                <p className={styles.desc}>{movie.overview.substring(0, 220)}</p>
+                <p className={styles.desc}>{movie.overview?.substring(0, 220)}</p>
                 <button onClick={() => handleClick(movie)} className={styles.btn}>
                     +
                 </button>
